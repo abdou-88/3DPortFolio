@@ -29,8 +29,7 @@ const App: React.FC<Props> = () => {
 
   return (
     <BrowserRouter>
-      <div>
-       
+     
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -47,9 +46,7 @@ const App: React.FC<Props> = () => {
           </ul>
        
 
-        
-
-      </div>
+    
       <Routes>      
 
           <Route path="/" element={<Home/>} />
