@@ -4,12 +4,11 @@ import './App.css';
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-
+import Home from './Components/Home';
+// eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
 
-const Home: React.FC = () => {
-  return <h1>Home Page</h1>;
-};
+
 
 const Skills: React.FC = () => {
   return <h1>Skills Page</h1>;
@@ -30,8 +29,7 @@ const App: React.FC<Props> = () => {
 
   return (
     <BrowserRouter>
-      <div>
-       
+     
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -48,9 +46,7 @@ const App: React.FC<Props> = () => {
           </ul>
        
 
-        
-
-      </div>
+    
       <Routes>      
 
           <Route path="/" element={<Home/>} />
