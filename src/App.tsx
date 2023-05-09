@@ -5,14 +5,11 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Home from './Components/Home';
+import Skills from './Components/Skills';
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
 
 
-
-const Skills: React.FC = () => {
-  return <h1>Skills Page</h1>;
-};
 const Experience: React.FC = () => {
   return <h1>Experience Page</h1>;
 };
@@ -45,7 +42,6 @@ const App: React.FC<Props> = () => {
             </li>
           </ul>
        
-
     
       <Routes>      
 
