@@ -6,14 +6,14 @@ type Props = {};
 
 
 
-const Skills: React.FC<Props> = () => {
+const Experience: React.FC<Props> = () => {
   
   return (
-    <h1>Skills Page</h1>
+    <h1>Experience Page</h1>
   );
 };
 
 
 
 
-export default Skills
+export default Experience
