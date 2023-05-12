@@ -1,9 +1,10 @@
 
 
 
-import { Suspense, useRef } from "react";
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrthographicCamera, ScrollControls } from "@react-three/drei";
+
+import {  Environment, MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
 
 import Desk from "../Models/Desk";
@@ -15,44 +16,37 @@ type Props = {};
 
 
 const Home: React.FC<Props> = () => {
-   const refCanvas: any = useRef(null);
-
+   
   return (
-    <Canvas ref={refCanvas} dpr={[1, 2]} shadows>
-      <OrthographicCamera makeDefault zoom={50} />
-      <ambientLight intensity={0.5} />
-
+    <Canvas dpr={[1, 2]} shadows camera={{ fov: 50 }}>
+      <color attach="background" args={["#101010"]} />
+      <fog attach="fog" args={["#101010", 15, 30]} />
       <Suspense fallback={<LoaderBox />}>
-        <spotLight
-          angle={0.24}
-          color="#fff"
-          penumbra={1}
-          position={[0, 0, 0]}
-          shadow-mapSize={[2048, 2048]}
-          shadow-bias={-0.001}
-          castShadow
-        />
-        <spotLight
-          angle={0.24}
-          color="#eab37b"
-          penumbra={1}
-          position={[15, 30, -30]}
-          shadow-mapSize={[2048, 2048]}
-          shadow-bias={-0.001}
-          castShadow
-        />
-
-        {/* Wrap contents you want to scroll into <ScrollControls> */}
-        <ScrollControls
-          style={{
-            msOverflowStyle: "none",
-            scrollbarWidth: "none",
-          }}
-          infinite={false}
-          pages={2}
+        <Environment preset="city" />
+        <PresentationControls
+          speed={1.5}
+          global
+          zoom={0.7}
+          polar={[-0.1, Math.PI / 4]}
         >
-          <Desk />
-        </ScrollControls>
+          <Stage
+            environment={"night"}
+            intensity={1}
+            castShadow={false}
+            shadows={true}
+          >
+            <Desk />
+          </Stage>
+          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
+            <planeGeometry args={[170, 170]} />
+            <MeshReflectorMaterial
+              blur={[300, 100]}
+              color="#101010"
+              metalness={1}
+              mirror={0}
+            />
+          </mesh>
+        </PresentationControls>
       </Suspense>
     </Canvas>
   );
