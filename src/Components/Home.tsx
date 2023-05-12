@@ -3,7 +3,7 @@
 
 import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { ScrollControls } from "@react-three/drei";
+import { OrthographicCamera, ScrollControls } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
 
 import Desk from "../Models/Desk";
@@ -19,7 +19,7 @@ const Home: React.FC<Props> = () => {
 
   return (
     <Canvas ref={refCanvas} dpr={[1, 2]} shadows>
-      {/* <OrthographicCamera makeDefault zoom={200} /> */}
+      <OrthographicCamera makeDefault zoom={50} />
       <ambientLight intensity={0.5} />
 
       <Suspense fallback={<LoaderBox />}>
@@ -49,7 +49,7 @@ const Home: React.FC<Props> = () => {
             scrollbarWidth: "none",
           }}
           infinite={false}
-          pages={8}
+          pages={2}
         >
           <Desk />
         </ScrollControls>

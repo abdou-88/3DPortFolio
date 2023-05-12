@@ -27,7 +27,7 @@ const App: React.FC<Props> = () => {
   return (
     <BrowserRouter>
      
-          <ul>
+          <ul >
             <li>
               <Link to="/">Home</Link>
             </li>
