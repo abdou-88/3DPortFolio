@@ -41,7 +41,7 @@ const Home: React.FC<Props> = () => {
             <planeGeometry args={[170, 170]} />
             <MeshReflectorMaterial
               blur={[300, 100]}
-              color="#101010"
+              color="#101011"
               metalness={1}
               mirror={0}
             />
