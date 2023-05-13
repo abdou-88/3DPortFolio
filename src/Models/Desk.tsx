@@ -108,9 +108,9 @@ type GLTFResult = GLTF & {
         receiveShadow
         geometry={nodes.Chair.geometry}
         material={materials.lambert2}
-        position={[-0.16, 1, -0.1]}
-        rotation={[0, 0.73, 0]}
-        scale={0.14}
+        position={[-0.16, 0.9, -0.1]}
+        rotation={[0, 0.9, 0]}
+        scale={0.15}
       />
       <mesh
         castShadow

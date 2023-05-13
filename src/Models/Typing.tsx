@@ -48,9 +48,9 @@ export default function Typing(props: JSX.IntrinsicElements["group"]) {
       <group name="Scene">
         <group
           name="AbiTyping"
-          position={[-0.09, 0.14, -0.57]}
+          position={[-0.09, -0.1, -0.57]}
           rotation={[1.62, 0.02, -0.94]}
-          scale={0.04}
+          scale={0.039}
         >
           <primitive object={nodes.mixamorigHips} />
           <group name="Abi">
