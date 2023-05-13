@@ -27,6 +27,7 @@ type GLTFResult = GLTF & {
 };
 
 type ActionName = "Armature|mixamo.com|Layer0" | "Walk_Abi.001";
+
 interface GLTFAction extends THREE.AnimationClip {
 name: ActionName;
  }
