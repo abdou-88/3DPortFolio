@@ -8,6 +8,7 @@ import {  Environment, MeshReflectorMaterial, PresentationControls, Stage } from
 import LoaderBox from "./LoaderBox";
 
 import Desk from "../Models/Desk";
+import Typing from "../Models/Typing";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
@@ -18,7 +19,7 @@ type Props = {};
 const Home: React.FC<Props> = () => {
    
   return (
-    <Canvas dpr={[1, 2]} shadows camera={{ fov: 50 }}>
+    <Canvas dpr={[1, 2]} shadows camera={{ fov: 55 }}>
       <color attach="background" args={["#101010"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
       <Suspense fallback={<LoaderBox />}>
@@ -36,6 +37,7 @@ const Home: React.FC<Props> = () => {
             shadows={true}
           >
             <Desk />
+            <Typing/>
           </Stage>
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
             <planeGeometry args={[170, 170]} />
