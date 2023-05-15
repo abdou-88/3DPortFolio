@@ -23,7 +23,7 @@ const Home: React.FC<Props> = () => {
       <color attach="background" args={["#101010"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
       <Suspense fallback={<LoaderBox />}>
-        <Environment preset="city" />
+        <Environment preset="sunset" />
         <PresentationControls
           speed={1.5}
           global
@@ -37,9 +37,9 @@ const Home: React.FC<Props> = () => {
             shadows={true}
           >
             <Desk />
-            <Typing/>
+            <Typing />
           </Stage>
-          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
+          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.38, 0]}>
             <planeGeometry args={[170, 170]} />
             <MeshReflectorMaterial
               blur={[300, 100]}

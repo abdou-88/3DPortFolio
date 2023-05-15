@@ -108,8 +108,8 @@ type GLTFResult = GLTF & {
         receiveShadow
         geometry={nodes.Chair.geometry}
         material={materials.lambert2}
-        position={[-0.16, 0.9, -0.1]}
-        rotation={[0, 0.9, 0]}
+        position={[0, 0.9, 0.2]}
+        rotation={[0, 0.7, 0]}
         scale={0.15}
       />
       <mesh
@@ -176,8 +176,8 @@ type GLTFResult = GLTF & {
         scale={0.06}
       />
       <group
-        position={[2.9, 3.66, 2.07]}
-        rotation={[Math.PI, -0.58, Math.PI]}
+        position={[2.9, 3.67, 2.07]}
+        rotation={[Math.PI, -0.75, Math.PI]}
         scale={0.02}
       >
         <mesh
@@ -198,7 +198,7 @@ type GLTFResult = GLTF & {
         receiveShadow
         geometry={nodes.Keyboard.geometry}
         material={materials.Keyboard}
-        position={[1.68, 2.92, 0.65]}
+        position={[1.5, 2.92, 1]}
         rotation={[Math.PI, -0.79, Math.PI]}
         scale={0.06}
       />
