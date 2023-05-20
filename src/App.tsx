@@ -6,13 +6,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Home from './Components/Home';
 import Skills from './Components/Skills';
+import Experience from './Components/Experience';
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
 
 
-const Experience: React.FC = () => {
-  return <h1>Experience Page</h1>;
-};
 const Education: React.FC = () => {
   return <h1>Education Page</h1>;
 };
