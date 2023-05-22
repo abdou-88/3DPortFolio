@@ -23,7 +23,7 @@ const Home: React.FC<Props> = () => {
       <color attach="background" args={["#101010"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
       <Suspense fallback={<LoaderBox />}>
-        <Environment preset="sunset" />
+        
         <PresentationControls
           speed={1.5}
           global
