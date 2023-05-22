@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import {   MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
-import LoadSpinner from "./LoaderBox";
+import LoadSpinner from "./LoadSpinner";
 
 import Desk from "../Models/Desk";
 import Typing from "../Models/Typing";
