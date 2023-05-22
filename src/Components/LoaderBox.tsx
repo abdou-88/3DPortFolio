@@ -1,9 +1,9 @@
 import { Html, useProgress } from "@react-three/drei";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import "../assets/Loader.css";
 
-const  LoaderBox = ()  => {
+const  LoadSpinner = ()  => {
   const box: any = useRef();
   const { progress } = useProgress();
 
@@ -44,4 +44,4 @@ const  LoaderBox = ()  => {
   );
 }
 
-export default LoaderBox;
+export default LoadSpinner;

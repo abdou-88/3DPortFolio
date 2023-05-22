@@ -4,8 +4,8 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import {  Environment, MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
-import LoaderBox from "./LoaderBox";
+import {   MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
+import LoadSpinner from "./LoaderBox";
 
 import Desk from "../Models/Desk";
 import Typing from "../Models/Typing";
@@ -22,7 +22,7 @@ const Home: React.FC<Props> = () => {
     <Canvas dpr={[1, 2]} shadows camera={{ fov: 55 }}>
       <color attach="background" args={["#101010"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
-      <Suspense fallback={<LoaderBox />}>
+      <Suspense fallback={<LoadSpinner />}>
         
         <PresentationControls
           speed={1.5}
