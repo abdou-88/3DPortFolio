@@ -31,7 +31,7 @@ export default function Scroller({
       start: "top top",
       end: () => `+=${height * multiplier - window.innerHeight}px`,
       scrub: true,
-      onUpdate: (self) => {
+      onUpdate: (self:any) => {
         setProgress(self.progress.toFixed(3) * 100);
       },
     });
@@ -41,17 +41,17 @@ export default function Scroller({
     <ScrollContainer className="scroll-container" ref={scrollContainerRef}>
       <ScrollTracker
         style={{ display: progressBar ? "block" : "none" }}
-        $color={progressBarColor}
+        color={progressBarColor}
       >
         <ScrollProgress
           style={{ width: `${progress}%` }}
-          $color={progressBarColor}
+          color={progressBarColor}
         />
       </ScrollTracker>
       <ScrollHeight
         className="scroll-height"
         ref={scrollHeightRef}
-        $height={height * multiplier}
+        // height={height * multiplier}
       />
     </ScrollContainer>
   );
@@ -77,7 +77,7 @@ export const ScrollTracker = styled.div`
   width: calc(80% - 50px);
   height: 15px;
   border-radius: 45px;
-  border: 1px solid ${(props) => props.$color};
+  border: 1px solid ${(props) => props.color};
   overflow: hidden;
   opacity: 0.8;
   -webkit-overflow-scrolling: touch;
@@ -90,11 +90,13 @@ export const ScrollProgress = styled.div`
   left: 0;
   height: 100%;
   width: 10%;
-  background: ${(props) => props.$color};
+  background: ${(props) => props.color};
 `;
 
 export const ScrollHeight = styled.div`
   background: transparent;
-  height: ${(props) => props.$height}px;
+ 
   width: 0;
 `;
+
+//  height: ${(props) => props.height}px;
