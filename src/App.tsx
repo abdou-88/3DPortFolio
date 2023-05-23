@@ -31,6 +31,7 @@ const App: React.FC<Props> = () => {
     // Example of adjusting the start / end timing
     gsap.to(camParams, {
       x: -Math.PI * 2,
+      y: -Math.PI * 2,
       z: -Math.PI * 2,
       rotation: Math.PI * 2,
       repeat: 2,
