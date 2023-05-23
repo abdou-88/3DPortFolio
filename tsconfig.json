@@ -19,6 +19,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  "files": [
+    "node_modules/gsap/types/index.d.ts",
+    "node_modulesgsap\typesscroll-trigger.d.ts"
+  ],
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
