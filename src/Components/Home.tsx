@@ -4,7 +4,8 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import {   MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
+
+import {   MeshReflectorMaterial, PresentationControls, ScrollControls, Stage } from "@react-three/drei";
 import LoadSpinner from "./LoadSpinner";
 
 import Desk from "../Models/Desk";
@@ -18,12 +19,20 @@ type Props = {};
 
 const Home: React.FC<Props> = () => {
    
+   
+    // position={[Math.cos(truckParams.x) * 1.5, -1.5, Math.sin(truckParams.z) * 1.5]}
+    //       rotation={[0, truckParams.rotation, 0]}
   return (
-    <Canvas dpr={[1, 2]} shadows camera={{ fov: 55 }}>
+    <Canvas
+      dpr={[1, 2]}
+      shadows
+      camera={{
+        fov: 55       
+      }}
+    >
       <color attach="background" args={["#101010"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
       <Suspense fallback={<LoadSpinner />}>
-        
         <PresentationControls
           speed={1.5}
           global
@@ -36,8 +45,10 @@ const Home: React.FC<Props> = () => {
             castShadow={false}
             shadows={true}
           >
-            <Desk />
-            <Typing />
+            <ScrollControls pages={3}>
+              <Desk />
+              <Typing />
+            </ScrollControls>
           </Stage>
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.38, 0]}>
             <planeGeometry args={[170, 170]} />

@@ -7,8 +7,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from './Components/Home';
 import Skills from './Components/Skills';
 import Experience from './Components/Experience';
-import { useEffect, useState } from 'react';
-import { scrollerConfig } from './Components/Scroller';
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
 
@@ -25,22 +24,7 @@ const NotFound: React.FC = () => {
 const App: React.FC<Props> = () => {
 
 
-  const [camParams] = useState(() => ({ x: 0, y:0, z: 0, rotation: 0 }));
-    
-  useEffect(() => {
-    // Example of adjusting the start / end timing
-    gsap.to(camParams, {
-      x: -Math.PI * 2,
-      y: -Math.PI * 2,
-      z: -Math.PI * 2,
-      rotation: Math.PI * 2,
-      repeat: 2,
-      scrollTrigger: {
-        ...scrollerConfig,
-      },
-    });
-  }, [camParams]);
-
+ 
   return (
     <BrowserRouter>
      
