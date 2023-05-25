@@ -119,12 +119,13 @@ type GLTFResult = GLTF & {
     const offset = 1 - scroll.offset;
    
     state.camera.position.set(
-      Math.sin(offset) * -10,
-      Math.atan(offset * Math.PI * 2) * 5,
-      Math.cos((offset * Math.PI) / 3) * -10
+      Math.sin(offset) * -10 +2,
+      Math.atan(offset * Math.PI * 2) * 5+1,
+      Math.cos((offset * Math.PI) / 3) * -5 +2
     );
     state.camera.lookAt(0, 0, 0);
   });
+  
   return (
     <group {...props} dispose={null}>
       <mesh

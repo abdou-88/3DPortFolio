@@ -45,7 +45,7 @@ const Home: React.FC<Props> = () => {
             castShadow={false}
             shadows={true}
           >
-            <ScrollControls pages={3}>
+            <ScrollControls pages={1}>
               <Desk />
               <Typing />
             </ScrollControls>
