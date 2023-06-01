@@ -20,8 +20,7 @@ type Props = {};
 const Home: React.FC<Props> = () => {
    
    
-    // position={[Math.cos(truckParams.x) * 1.5, -1.5, Math.sin(truckParams.z) * 1.5]}
-    //       rotation={[0, truckParams.rotation, 0]}
+   
   return (
     <Canvas
       dpr={[1, 2]}
