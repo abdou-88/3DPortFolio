@@ -19,7 +19,7 @@ const Menu: FC<MenuProps> = ({ active }) => {
     false,
   ]);
 
- const menuItems = ["home", "about me", "news", "media", "contact"];
+ const menuItems = ["home", "Skills", "Experience", "Education"];
 
 
   const MBclick = (index: number) => {
