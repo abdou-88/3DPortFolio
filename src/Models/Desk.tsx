@@ -117,7 +117,9 @@ type GLTFResult = GLTF & {
     
     // The offset is between 0 and 1, you can apply it to your models any way you like
     const offset = 1 - scroll.offset;
-   
+ if (offset>=0.1){
+  state.camera.position.set(0, 0, 0);
+ }
     state.camera.position.set(
       Math.sin(offset) * -10 +2,
       Math.atan(offset * Math.PI * 2) * 5+1,
