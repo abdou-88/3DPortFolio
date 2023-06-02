@@ -3,7 +3,7 @@
 import './App.css';
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
+import Menu from './Components/Menu';
 import Home from './Components/Home';
 import Skills from './Components/Skills';
 import Experience from './Components/Experience';
@@ -27,8 +27,8 @@ const App: React.FC<Props> = () => {
  
   return (
     <BrowserRouter>
-     
-          <ul >
+     <Menu active={false}/>
+          {/* <ul >
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -41,7 +41,7 @@ const App: React.FC<Props> = () => {
             <li>
               <Link to="/Education">Education</Link>
             </li>
-          </ul>
+          </ul> */}
        
       <Routes>      
 
