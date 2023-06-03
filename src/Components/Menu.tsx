@@ -9,7 +9,7 @@ interface MenuProps {
   active: boolean;
 }
 
-const Menu: FC<MenuProps> = ({ active }) => {
+const Menu: FC<MenuProps> = () => {
   const [open, setOpen] = useState(false);
   const [activeItem, setActiveItem] = useState([
     true,
