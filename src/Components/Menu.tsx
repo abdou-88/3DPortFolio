@@ -48,9 +48,14 @@ const Menu: FC<MenuProps> = () => {
           key: i,
           id: i,
         },
+      
         React.createElement(
           "a",
           { href: "#", className: Aclass },
+          React.createElement(
+            "img",
+            { src: "/PExperiences.png", className:"imgMenu" }         
+          ),
           React.createElement("strong", {}, menuItems[i]),
           React.createElement("small", {}, "------------------------")
         )
