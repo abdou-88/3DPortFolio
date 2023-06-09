@@ -19,8 +19,8 @@ const Menu: FC<MenuProps> = () => {
     false,
   ]);
 
- const menuItems = ["home", "Skills", "Experience", "Education"];
-
+ const menuItems = ["Home", "Skills", "Experience", "Education"];
+ const menuIcons = ["/PExperiences.png", "/Peducations.png", "/PExperiences.png", "/Peducations.png"];
 
   const MBclick = (index: number) => {
     window.scrollTo({
@@ -48,13 +48,13 @@ const Menu: FC<MenuProps> = () => {
           key: i,
           id: i,
         },
-      
+       
         React.createElement(
           "a",
-          { href: "#", className: Aclass },
+          { href: `/${menuItems[i]}`, className: Aclass },
           React.createElement(
             "img",
-            { src: "/PExperiences.png", className:"imgMenu" }         
+            { src: menuIcons[i], className:"imgMenu" }         
           ),
           React.createElement("strong", {}, menuItems[i]),
           React.createElement("small", {}, "------------------------")

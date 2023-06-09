@@ -26,26 +26,22 @@ const App: React.FC<Props> = () => {
 
  
   return (
-    <BrowserRouter>
-     <Menu active={false}/>
-          {/* <ul >
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/skills">Skills</Link>
-            </li>
-            <li>
-              <Link to="/Experience">Experience</Link>
-            </li>
-            <li>
+
+    <div>
+        <div className="container">
+
+          <div className="main" style={{ height:'89vh', width: '100vw' }}>
+            <BrowserRouter>
+          
+          {/*
+           
               <Link to="/Education">Education</Link>
-            </li>
-          </ul> */}
-       
+            */}
+      
       <Routes>      
 
           <Route path="/" element={<Home/>} />
+          <Route path="/Home" element={<Home/>} />
           <Route path="/*"element={<NotFound/>} />
           <Route path="/Skills" element={<Skills/>} />
           <Route path="/Experience" element={<Experience/>} />
@@ -53,7 +49,17 @@ const App: React.FC<Props> = () => {
 
           
         </Routes>
-    </BrowserRouter>
+            </BrowserRouter>
+          </div>
+
+          <div className="header">
+          <Menu active={false}/>
+          </div>
+
+        </div>
+      </div>
+   
+   
   );
 };
 

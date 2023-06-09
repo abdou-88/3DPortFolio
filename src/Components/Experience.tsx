@@ -9,7 +9,7 @@ type Props = {};
 const Experience: React.FC<Props> = () => {
   
   return (
-    <h1>Experience Page</h1>
+    <h1 style={{color:"white"}}>Experience Page</h1>
   );
 };
 
