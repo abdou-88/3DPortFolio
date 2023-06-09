@@ -36,6 +36,7 @@ const App: React.FC<Props> = () => {
           {/*
            
               <Link to="/Education">Education</Link>
+              <Link to="/Education">Education</Link>
             */}
       
       <Routes>      
