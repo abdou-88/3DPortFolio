@@ -2,12 +2,12 @@
 
 import './App.css';
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from './Components/Menu';
 import Home from './Components/Home';
 import Skills from './Components/Skills';
 import Experience from './Components/Experience';
-import OverLay from './Components/OverLay';
+
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
