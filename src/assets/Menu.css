@@ -4,6 +4,7 @@
   width: 40px;
   height: 35px;
   position: absolute;
+  background-color: #101010;
   top:0px;
   align-content: center;
   left: 1%;
@@ -110,8 +111,8 @@
 .mcd-menu {
   overflow: hidden;
   position:relative;
-  background-color: black;
-  width: 50%;
+  /* background-color: #101070; */
+  width: 400px;
   left:30vh;
   white-space: nowrap;
    opacity: 0;
@@ -123,7 +124,7 @@
   float: right;
   top: 0px;
   left: 100px;
- 
+  /* background-color: #108070; */
 }
 .opened  {
   opacity: 1;
@@ -241,7 +242,7 @@
   position: absolute;
   z-index: 15;
  padding-top: 10%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #101010;
   height: 100%;
 }
 .mcd-menu div {

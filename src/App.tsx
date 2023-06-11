@@ -7,6 +7,7 @@ import Menu from './Components/Menu';
 import Home from './Components/Home';
 import Skills from './Components/Skills';
 import Experience from './Components/Experience';
+import OverLay from './Components/OverLay';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
@@ -24,43 +25,49 @@ const NotFound: React.FC = () => {
 const App: React.FC<Props> = () => {
 
 
- 
+
   return (
 
-    <div>
-        <div className="container">
+    <>
+     
+        
 
-          <div className="main" style={{ height:'89vh', width: '100vw' }}>
-            <BrowserRouter>
+
+
+        
+        <div className="content">
+        <BrowserRouter>
           
           {/*
            
               <Link to="/Education">Education</Link>
               <Link to="/Education">Education</Link>
             */}
-      
-      <Routes>      
 
-          <Route path="/" element={<Home/>} />
-          <Route path="/Home" element={<Home/>} />
-          <Route path="/*"element={<NotFound/>} />
-          <Route path="/Skills" element={<Skills/>} />
-          <Route path="/Experience" element={<Experience/>} />
-          <Route path="/Education" element={<Education/>} />
+          <Routes>
 
-          
-        </Routes>
-            </BrowserRouter>
-          </div>
+            <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/*" element={<NotFound />} />
+            <Route path="/Skills" element={<Skills />} />
+            <Route path="/Experience" element={<Experience />} />
+            <Route path="/Education" element={<Education />} />
 
-          <div className="header">
-          <Menu active={false}/>
-          </div>
 
+          </Routes>
+        </BrowserRouter>
+        
         </div>
-      </div>
+        
+        <div className="overlay">
+        <Menu active={true}/>
+        </div>
+
+
+      </>
    
-   
+
+
   );
 };
 
