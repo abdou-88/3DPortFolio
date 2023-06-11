@@ -29,15 +29,15 @@ const App: React.FC<Props> = () => {
   return (
 
     <>
-     
-        
 
 
 
-        
-        <div className="content">
+
         <BrowserRouter>
-          
+
+          <div className="overlay">
+            <Menu active={true} />
+          </div>
           {/*
            
               <Link to="/Education">Education</Link>
@@ -56,16 +56,14 @@ const App: React.FC<Props> = () => {
 
           </Routes>
         </BrowserRouter>
-        
-        </div>
-        
-        <div className="overlay">
-        <Menu active={true}/>
-        </div>
+
+      
 
 
-      </>
-   
+
+
+    </>
+
 
 
   );

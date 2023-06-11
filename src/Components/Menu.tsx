@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 
 
 
@@ -19,8 +19,8 @@ const Menu: FC<MenuProps> = () => {
     false,
   ]);
 
- const menuItems = ["Home", "Skills", "Experience", "Education"];
- const menuIcons = ["/PExperiences.png", "/Peducations.png", "/PExperiences.png", "/Peducations.png"];
+ const menuItems = ["Home", "Skills", "Experience", "Education","Contact"];
+ const menuIcons = ["/Pexperiences.png", "/Peducations.png", "/Pexperiences.png", "/Peducations.png","/Pexperiences.png"];
 
   const MBclick = (index: number) => {
     window.scrollTo({
