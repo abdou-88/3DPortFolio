@@ -1,7 +1,7 @@
 
 
 
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 
@@ -19,20 +19,24 @@ type Props = {};
 
 const Home: React.FC<Props> = () => {
 
+ const [offSet, setOffSet] = useState(0);
 
+useEffect(() => {
+  // Update the document title using the browser API
+  console.log(offSet);
+}, [offSet]);
 
   return (
     <Canvas
       dpr={[1, 2]}
       shadows
       camera={{
-        fov: 55
+        fov: 55,
       }}
     >
       <color attach="background" args={["hsl(0, 100% ,100%)"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
 
-          
       <Suspense fallback={<LoadSpinner />}>
         <PresentationControls
           speed={1.5}
@@ -40,85 +44,128 @@ const Home: React.FC<Props> = () => {
           zoom={0.7}
           polar={[-0.1, Math.PI / 4]}
         >
-           <ContactShadows resolution={1024} frames={1} position={[0, -2, 0]} scale={25} blur={0.5} opacity={1} far={20} />
-      
+          <ContactShadows
+            resolution={1024}
+            frames={1}
+            position={[0, -2, 0]}
+            scale={25}
+            blur={0.5}
+            opacity={1}
+            far={20}
+          />
+
           <Stage
             environment={"apartment"}
             intensity={1}
             castShadow={false}
             shadows={true}
           >
-           
-            <ScrollControls pages={1}>      
-            
-              <mesh scale={4} position={[4, 0, -1]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
+            <ScrollControls pages={1}>
+              <mesh
+                scale={4}
+                position={[4, 0, -1]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+              >
                 <ringGeometry args={[0.9, 1, 3, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
-              
-              <mesh scale={4} position={[-3, 0, -1]} rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}>
+
+              <mesh
+                scale={4}
+                position={[-3, 0, -1]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
+              >
                 <ringGeometry args={[0.9, 1, 5, 2]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
 
-              <mesh scale={4} position={[-1.5, 0, 7]} rotation={[-Math.PI / 2, 0, Math.PI /2.5]}>
+              <mesh
+                scale={4}
+                position={[-1.5, 0, 7]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
+              >
                 <ringGeometry args={[0.9, 1, 4, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
-             
-              <mesh scale={4} position={[6, 0, 5.5]} rotation={[-Math.PI / 2, 0, Math.PI / 5]}>
+
+              <mesh
+                scale={4}
+                position={[6, 0, 5.5]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 5]}
+              >
                 <ringGeometry args={[0.9, 1, 6, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
 
-
-
-              <mesh scale={4} position={[9, 0, -5]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
+              <mesh
+                scale={4}
+                position={[9, 0, -5]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+              >
                 <ringGeometry args={[0.9, 1, 5, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
-              
-              <mesh scale={4} position={[11, 0, 10]} rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}>
+
+              <mesh
+                scale={4}
+                position={[11, 0, 10]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
+              >
                 <ringGeometry args={[0.9, 1, 3, 2]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
 
-              <mesh scale={4} position={[-11, 0, 5]} rotation={[-Math.PI / 2, 0, Math.PI /2.5]}>
+              <mesh
+                scale={4}
+                position={[-11, 0, 5]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
+              >
                 <ringGeometry args={[0.9, 1, 6, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
-             
-              <mesh scale={4} position={[3, 0, 14]} rotation={[-Math.PI / 2, 0, Math.PI / 5]}>
+
+              <mesh
+                scale={4}
+                position={[3, 0, 14]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 5]}
+              >
                 <ringGeometry args={[0.9, 1, 4, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
 
-
-              <mesh scale={4} position={[15, 0, 2]} rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}>
+              <mesh
+                scale={4}
+                position={[15, 0, 2]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
+              >
                 <ringGeometry args={[0.9, 1, 4, 2]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
 
-              <mesh scale={4} position={[-7, 0, 14]} rotation={[-Math.PI / 2, 0, Math.PI /2.5]}>
+              <mesh
+                scale={4}
+                position={[-7, 0, 14]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
+              >
                 <ringGeometry args={[0.9, 1, 3, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
-             
-              <mesh scale={4} position={[3, 0, 14]} rotation={[-Math.PI / 2, 0, Math.PI / 5]}>
+
+              <mesh
+                scale={4}
+                position={[3, 0, 14]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 5]}
+              >
                 <ringGeometry args={[0.9, 1, 4, 1]} />
                 <meshStandardMaterial color="black" roughness={0.75} />
               </mesh>
 
-              <Desk />
+              <Desk onScroll={setOffSet} />
               <Typing />
-              
             </ScrollControls>
-
           </Stage>
 
-
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.38, 0]}>
-
             <MeshReflectorMaterial
               blur={[300, 100]}
               color="#101011"

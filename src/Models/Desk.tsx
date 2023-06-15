@@ -101,7 +101,7 @@ type GLTFResult = GLTF & {
   };
 };
 
- export default function Desk(props: JSX.IntrinsicElements["group"]) {
+ export default function Desk(onScroll: any, props: JSX.IntrinsicElements["group"]) {
   const {  nodes, materials } = useGLTF("/Desk.glb") as GLTFResult;
 
 
@@ -117,7 +117,7 @@ type GLTFResult = GLTF & {
     
     // The offset is between 0 and 1, you can apply it to your models any way you like
     const offset = 1 - scroll.offset;
-
+    onScroll(1 - scroll.offset);
     state.camera.position.set(
       Math.sin(offset ) * -10 -3 ,
       Math.atan(offset * Math.PI * 2) * 5+2,
