@@ -124,7 +124,7 @@ type GLTFResult = GLTF & {
       Math.cos((offset * Math.PI) / 3) * 2 -3
     );
    
-    state.camera.lookAt(0, 0, 0);
+    state.camera.lookAt(0, 0, -1);
   });
   
   return (

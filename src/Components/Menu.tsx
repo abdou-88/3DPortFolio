@@ -20,7 +20,13 @@ const Menu: FC<MenuProps> = () => {
   ]);
 
  const menuItems = ["Home", "Skills", "Experience", "Education","Contact"];
- const menuIcons = ["/Pexperiences.png", "/Peducations.png", "/Pexperiences.png", "/Peducations.png","/Pexperiences.png"];
+ const menuIcons = [
+   "/PExperiences.png",
+   "/Peducations.png",
+   "/PExperiences.png",
+   "/Peducations.png",
+   "/PExperiences.png",
+ ];
 
   const MBclick = (index: number) => {
     window.scrollTo({
