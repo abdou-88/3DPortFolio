@@ -29,7 +29,7 @@ const Home: React.FC<Props> = () => {
         fov: 55
       }}
     >
-      <color attach="background" args={["hsl(0%, 100% ,0%)"]} />
+      <color attach="background" args={["hsl(0, 100% ,100%)"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
 
           
@@ -44,7 +44,6 @@ const Home: React.FC<Props> = () => {
       
           <Stage
             environment={"apartment"}
-
             intensity={1}
             castShadow={false}
             shadows={true}
@@ -114,7 +113,10 @@ const Home: React.FC<Props> = () => {
               <Typing />
               
             </ScrollControls>
+
           </Stage>
+
+
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.38, 0]}>
 
             <MeshReflectorMaterial
