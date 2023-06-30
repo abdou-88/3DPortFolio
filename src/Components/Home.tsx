@@ -10,6 +10,7 @@ import LoadSpinner from "./LoadSpinner";
 
 import Desk from "../Models/Desk";
 import Typing from "../Models/Typing";
+import Floor from "../Models/Floor";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
@@ -19,12 +20,9 @@ type Props = {};
 
 const Home: React.FC<Props> = () => {
 
- const [offSet, setOffSet] = useState(0);
 
-useEffect(() => {
-  // Update the document title using the browser API
-  console.log(offSet);
-}, [offSet]);
+
+
 
   return (
     <Canvas
@@ -51,8 +49,7 @@ useEffect(() => {
             scale={25}
             blur={0.5}
             opacity={1}
-            far={20}
-          />
+            far={20} key={undefined} copy={undefined} attach={undefined} args={undefined} children={undefined} onUpdate={undefined} clone={undefined} add={undefined} toJSON={undefined} quaternion={undefined} name={undefined} rotation={undefined} visible={undefined} up={undefined} matrix={undefined} layers={undefined} dispose={undefined} type={undefined} isGroup={undefined} id={undefined} uuid={undefined} parent={undefined} modelViewMatrix={undefined} normalMatrix={undefined} matrixWorld={undefined} matrixAutoUpdate={undefined} matrixWorldAutoUpdate={undefined} matrixWorldNeedsUpdate={undefined} castShadow={undefined} receiveShadow={undefined} frustumCulled={undefined} renderOrder={undefined} animations={undefined} userData={undefined} customDepthMaterial={undefined} customDistanceMaterial={undefined} isObject3D={undefined} onBeforeRender={undefined} onAfterRender={undefined} applyMatrix4={undefined} applyQuaternion={undefined} setRotationFromAxisAngle={undefined} setRotationFromEuler={undefined} setRotationFromMatrix={undefined} setRotationFromQuaternion={undefined} rotateOnAxis={undefined} rotateOnWorldAxis={undefined} rotateX={undefined} rotateY={undefined} rotateZ={undefined} translateOnAxis={undefined} translateX={undefined} translateY={undefined} translateZ={undefined} localToWorld={undefined} worldToLocal={undefined} lookAt={undefined} remove={undefined} removeFromParent={undefined} clear={undefined} getObjectById={undefined} getObjectByName={undefined} getObjectByProperty={undefined} getObjectsByProperty={undefined} getWorldPosition={undefined} getWorldQuaternion={undefined} getWorldScale={undefined} getWorldDirection={undefined} raycast={undefined} traverse={undefined} traverseVisible={undefined} traverseAncestors={undefined} updateMatrix={undefined} updateMatrixWorld={undefined} updateWorldMatrix={undefined} addEventListener={undefined} hasEventListener={undefined} removeEventListener={undefined} dispatchEvent={undefined} onClick={undefined} onContextMenu={undefined} onDoubleClick={undefined} onPointerUp={undefined} onPointerDown={undefined} onPointerOver={undefined} onPointerOut={undefined} onPointerEnter={undefined} onPointerLeave={undefined} onPointerMove={undefined} onPointerMissed={undefined} onPointerCancel={undefined} onWheel={undefined} />
 
           <Stage
             environment={"apartment"}
@@ -60,109 +57,13 @@ useEffect(() => {
             castShadow={false}
             shadows={true}
           >
-            <ScrollControls pages={1}>
-              <mesh
-                scale={4}
-                position={[4, 0, -1]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-              >
-                <ringGeometry args={[0.9, 1, 3, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[-3, 0, -1]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-              >
-                <ringGeometry args={[0.9, 1, 5, 2]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[-1.5, 0, 7]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-              >
-                <ringGeometry args={[0.9, 1, 4, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[6, 0, 5.5]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 5]}
-              >
-                <ringGeometry args={[0.9, 1, 6, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[9, 0, -5]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-              >
-                <ringGeometry args={[0.9, 1, 5, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[11, 0, 10]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-              >
-                <ringGeometry args={[0.9, 1, 3, 2]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[-11, 0, 5]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-              >
-                <ringGeometry args={[0.9, 1, 6, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[3, 0, 14]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 5]}
-              >
-                <ringGeometry args={[0.9, 1, 4, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[15, 0, 2]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-              >
-                <ringGeometry args={[0.9, 1, 4, 2]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[-7, 0, 14]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-              >
-                <ringGeometry args={[0.9, 1, 3, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <mesh
-                scale={4}
-                position={[3, 0, 14]}
-                rotation={[-Math.PI / 2, 0, Math.PI / 5]}
-              >
-                <ringGeometry args={[0.9, 1, 4, 1]} />
-                <meshStandardMaterial color="black" roughness={0.75} />
-              </mesh>
-
-              <Desk onScroll={setOffSet} />
+            
+            <ScrollControls pages={1} damping={1}>
+              <Floor />
+              <Desk />
               <Typing />
             </ScrollControls>
+
           </Stage>
 
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.38, 0]}>

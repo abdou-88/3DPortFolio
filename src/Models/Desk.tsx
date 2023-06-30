@@ -7,7 +7,7 @@ import * as THREE from "three";
 import {  useGLTF, useScroll } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -101,9 +101,9 @@ type GLTFResult = GLTF & {
   };
 };
 
- export default function Desk(onScroll: any, props: JSX.IntrinsicElements["group"]) {
+ export default function Desk( props: JSX.IntrinsicElements["group"]) {
   const {  nodes, materials } = useGLTF("/Desk.glb") as GLTFResult;
-
+  
 
   const scroll = useScroll();
  
@@ -113,11 +113,11 @@ type GLTFResult = GLTF & {
     )
   );
  
-  useFrame((state) => {
+  useFrame((state: { camera: { position: { set: (arg0: number, arg1: number, arg2: number) => void; }; lookAt: (arg0: number, arg1: number, arg2: number) => void; }; }) => {
     
     // The offset is between 0 and 1, you can apply it to your models any way you like
     const offset = 1 - scroll.offset;
-    onScroll(1 - scroll.offset);
+    
     state.camera.position.set(
       Math.sin(offset ) * -10 -3 ,
       Math.atan(offset * Math.PI * 2) * 5+2,
@@ -125,6 +125,8 @@ type GLTFResult = GLTF & {
     );
    
     state.camera.lookAt(0, 0, -1);
+    // setScrollPos(1 - scroll.offset);
+    
   });
   
   return (
