@@ -116,6 +116,7 @@ type GLTFResult = GLTF & {
   useFrame((state: { camera: { position: { set: (arg0: number, arg1: number, arg2: number) => void; }; lookAt: (arg0: number, arg1: number, arg2: number) => void; }; }) => {
     
     // The offset is between 0 and 1, you can apply it to your models any way you like
+
     const offset = 1 - scroll.offset;
     
     state.camera.position.set(
