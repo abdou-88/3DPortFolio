@@ -7,7 +7,7 @@ import gsap from "gsap";
 import {  ContactShadows, useGLTF, useScroll } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {  useLayoutEffect, useRef } from "react";
 import Floor from "./Floor";
 import Typing from "./Typing";
 
@@ -106,8 +106,9 @@ type GLTFResult = GLTF & {
   };
 };
 
- export default function Desk( props: JSX.IntrinsicElements["group"]) {
+ export default function FullScene( props: JSX.IntrinsicElements["group"]) {
   const {  nodes, materials } = useGLTF("/Desk.glb") as GLTFResult;
+  
   const ref:any = useRef();
   const tl:any = useRef();
   const PictureRef:any = useRef();
