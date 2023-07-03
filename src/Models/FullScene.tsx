@@ -108,7 +108,7 @@ type GLTFResult = GLTF & {
 
  export default function FullScene( props: JSX.IntrinsicElements["group"]) {
   const {  nodes, materials } = useGLTF("/Desk.glb") as GLTFResult;
-  
+
   const ref:any = useRef();
   const tl:any = useRef();
   const PictureRef:any = useRef();
@@ -213,26 +213,11 @@ type GLTFResult = GLTF & {
       1.5
     );
   }, []);
- 
-  // useFrame((state: { camera: { position: { set: (arg0: number, arg1: number, arg2: number) => void; }; lookAt: (arg0: number, arg1: number, arg2: number) => void; }; }) => {
-    
-  //   // The offset is between 0 and 1, you can apply it to your models any way you like
 
-  //   const offset = 1 - scroll.offset;
-    
-  //   state.camera.position.set(
-  //     Math.sin(offset ) * -10 -3 ,
-  //     Math.atan(offset * Math.PI * 2) * 5+2,
-  //     Math.cos((offset * Math.PI) / 3) * 2 -3
-  //   );
-   
-  //   state.camera.lookAt(0, 0, -1);
-  //   // setScrollPos(1 - scroll.offset);
-    
-  // });
   
   return (
     <group {...props} dispose={null} ref={ref}>
+    
       <Floor />
       <Typing />
       <ContactShadows

@@ -29,15 +29,18 @@ const Home: React.FC<Props> = () => {
       camera={{
         fov: 55,
       }}
+      
 
     >
       <color attach="background" args={["hsl(0, 100% ,100%)"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
+    
 
+     
       <Suspense fallback={<LoadSpinner />}>
 
         <OrbitControls enableZoom={false} />
-
+        
 
         <Stage
           environment={"apartment"}
