@@ -227,8 +227,7 @@ type GLTFResult = GLTF & {
           scale={25}
           blur={0.5}
           opacity={1}
-         
-
+        
         />
 
       <mesh
