@@ -227,10 +227,11 @@ type GLTFResult = GLTF & {
      <ContactShadows
          resolution={1024}
          frames={1}
-         position={[0, -2, 0]}
+         position={[1.4, 0, 2.5]}
          scale={25}
          blur={0.5}
          opacity={1}
+         rotation={[0,0,0.03]}
        
        />
 
