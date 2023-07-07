@@ -1,7 +1,7 @@
 
 
 
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 
 
@@ -10,6 +10,7 @@ import { OrbitControls, ScrollControls, Stage } from "@react-three/drei";
 import LoadSpinner from "./LoadSpinner";
 
 import FullScene from "../Models/FullScene";
+import THREE from "three";
 
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -35,7 +36,7 @@ const Home: React.FC<Props> = () => {
       <color attach="background" args={["hsl(0, 100% ,100%)"]} />
       <fog attach="fog" args={["#101010", 15, 30]} />
     
-
+     
      
       <Suspense fallback={<LoadSpinner />}>
 
@@ -50,7 +51,8 @@ const Home: React.FC<Props> = () => {
         >
 
           <ScrollControls pages={1} damping={0.5}>
-
+          <ambientLight />
+         <pointLight position={[1, 1, 1]} />
             <FullScene />
 
           </ScrollControls>
