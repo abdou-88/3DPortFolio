@@ -1,7 +1,7 @@
 
 
 
-import { Suspense, useRef } from "react";
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
 
@@ -10,15 +10,31 @@ import { OrbitControls, ScrollControls, Stage } from "@react-three/drei";
 import LoadSpinner from "./LoadSpinner";
 
 import FullScene from "../Models/FullScene";
-import THREE from "three";
+
 
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
 
 
+type LightProps = {
+  brightness:number, 
+  color: string
+}
 
-
+function Light({ brightness, color }:LightProps) {
+  return (
+    <rectAreaLight
+      width={3}
+      height={3}
+      color={color}
+      intensity={brightness}
+      position={[-2, 10, 0]}
+      
+      castShadow
+    />
+  );
+}
 const Home: React.FC<Props> = () => {
 
 
@@ -33,14 +49,12 @@ const Home: React.FC<Props> = () => {
       
 
     >
-      <color attach="background" args={["hsl(0, 100% ,100%)"]} />
-      <fog attach="fog" args={["#101010", 15, 30]} />
-    
-     
-     
+      <Light brightness={5} color={"red"} />
+      
+      <OrbitControls enableZoom={false} />
       <Suspense fallback={<LoadSpinner />}>
 
-        <OrbitControls enableZoom={false} />
+     
         
 
         <Stage
@@ -52,7 +66,6 @@ const Home: React.FC<Props> = () => {
 
           <ScrollControls pages={1} damping={0.5}>
           <ambientLight />
-         <pointLight position={[1, 1, 1]} />
             <FullScene />
 
           </ScrollControls>
