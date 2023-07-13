@@ -11,9 +11,6 @@ import {  useLayoutEffect, useRef } from "react";
 import Floor from "./Floor";
 import Typing from "./Typing";
 
-export const FLOOR_HEIGHT = 2.3;
-export const NB_FLOORS = 3;
-
 
 
 type GLTFResult = GLTF & {
@@ -111,8 +108,10 @@ type GLTFResult = GLTF & {
  export default function FullScene( props: JSX.IntrinsicElements["group"]) {
   const {  nodes, materials } = useGLTF("/Desk.glb") as GLTFResult;
 
-  const ref:any = useRef();
+  
   const tl:any = useRef();
+
+  const ref:any = useRef();
   const PictureRef:any = useRef();
   const groupRef:any = useRef();
 
@@ -131,86 +130,96 @@ type GLTFResult = GLTF & {
       ref.current.position,
       {
         duration: 2,
-        y: -FLOOR_HEIGHT * (NB_FLOORS - 1),
+        y: 16,
+        x:16,
+        z:29
       },
       0
     );
 
-    // Office Rotation
     tl.current.to(
       ref.current.rotation,
-      { duration: 1, x: 0, y: Math.PI / 6, z: 0 },
-      0
-    );
-    tl.current.to(
-      ref.current.rotation,
-      { duration: 1, x: 0, y: -Math.PI / 6, z: 0 },
-      1
-    );
-
-    // Office movement
-    tl.current.to(
-      ref.current.position,
       {
-        duration: 1,
-        x: -1,
-        z: 2,
+        duration: 2,
+        x: 0, y: Math.PI*1.2 , z: 0
       },
       0
     );
-    tl.current.to(
-      ref.current.position,
-      {
-        duration: 1,
-        x: 1,
-        z: 2,
-      },
-      1
-    );
+    // // Office Rotation
+    // tl.current.to(
+    //   ref.current.rotation,
+    //   { duration: 1, x: 0, y: Math.PI / 6, z: 0 },
+    //   0
+    // );
+    // tl.current.to(
+    //   ref.current.rotation,
+    //   { duration: 1, x: 0, y: -Math.PI / 6, z: 0 },
+    //   1
+    // );
 
-    // LIBRARY FLOOR
-    tl.current.from(
-      PictureRef.current.position,
-      {
-        duration: 0.5,
-        x: -2,
-      },
-      0.5
-    );
-    tl.current.from(
-      PictureRef.current.rotation,
-      {
-        duration: 0.5,
-        y: -Math.PI / 2,
-      },
-      0
-    );
+    // // Office movement
+    // tl.current.to(
+    //   ref.current.position,
+    //   {
+    //     duration: 1,
+    //     x: 7,
+    //     z: 7,
+    //   },
+    //   0
+    // );
+    // tl.current.to(
+    //   ref.current.position,
+    //   {
+    //     duration: 1,
+    //     x: 7,
+    //     z: 7,
+    //   },
+    //   1
+    // );
 
-    // ATTIC
+    // // LIBRARY FLOOR
+    // tl.current.from(
+    //   PictureRef.current.position,
+    //   {
+    //     duration: 0.5,
+    //     x: -2,
+    //   },
+    //   0.5
+    // );
+    // tl.current.from(
+    //   PictureRef.current.rotation,
+    //   {
+    //     duration: 0.5,
+    //     y: -Math.PI / 2,
+    //   },
+    //   0
+    // );
+
+    // // ATTIC
+    // tl.current.from(
+    //   groupRef.current.position,
+    //   {
+    //     duration: 1.5,
+    //     y: 2,
+    //   },
+    //   0
+    // );
+
+    // tl.current.from(
+    //   groupRef.current.rotation,
+    //   {
+    //     duration: 0.5,
+    //     y: Math.PI / 2,
+    //   },
+    //   1
+    // );
+
     tl.current.from(
       groupRef.current.position,
       {
-        duration: 1.5,
-        y: 2,
-      },
-      0
-    );
-
-    tl.current.from(
-      groupRef.current.rotation,
-      {
-        duration: 0.5,
-        y: Math.PI / 2,
-      },
-      1
-    );
-
-    tl.current.from(
-      groupRef.current.position,
-      {
         duration: 0.5,
 
-        z: -2,
+        z: 7,
       },
       1.5
     );
@@ -219,7 +228,7 @@ type GLTFResult = GLTF & {
   
   return (
    <>
-   <pointLight position={[0, 20, 10]} intensity={1.5} />
+   
     <group {...props} dispose={null} ref={ref}>
      
      <Floor />
@@ -284,7 +293,7 @@ type GLTFResult = GLTF & {
        position={[4.02, 2.9, 0.48]}
        rotation={[-1.57, 0.02, -1.63]}
        scale={0.45}
-       ref={groupRef}
+       
      >
        <mesh
          castShadow
@@ -615,6 +624,7 @@ type GLTFResult = GLTF & {
        position={[-2.63, 2.96, 1.62]}
        rotation={[0.01, 1.42, -0.01]}
        scale={0.04}
+       ref={groupRef}
      >
        <mesh
          castShadow

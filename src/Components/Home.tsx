@@ -44,13 +44,15 @@ const Home: React.FC<Props> = () => {
       dpr={[1, 2]}
       shadows
       camera={{
-        fov: 55,
+        fov: 70, position:[3,3,5]
       }}
+      
       
 
     >
       <Light brightness={5} color={"red"} />
-      
+      <color attach="background" args={["black"]} />
+     
       <OrbitControls enableZoom={false} />
       <Suspense fallback={<LoadSpinner />}>
 
