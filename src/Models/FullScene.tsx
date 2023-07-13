@@ -113,7 +113,7 @@ type GLTFResult = GLTF & {
 
   const ref:any = useRef();
   const PictureRef:any = useRef();
-  const groupRef:any = useRef();
+  const teslaRef:any = useRef();
 
   const scroll = useScroll();
  
@@ -125,14 +125,14 @@ type GLTFResult = GLTF & {
 
     tl.current = gsap.timeline();
 
-    // VERTICAL ANIMATION
+    //  ANIMATION
     tl.current.to(
       ref.current.position,
       {
         duration: 2,
         y: 16,
-        x:16,
-        z:29
+        x:15.5,
+        z:29.5
       },
       0
     );
@@ -145,77 +145,9 @@ type GLTFResult = GLTF & {
       },
       0
     );
-    // // Office Rotation
-    // tl.current.to(
-    //   ref.current.rotation,
-    //   { duration: 1, x: 0, y: Math.PI / 6, z: 0 },
-    //   0
-    // );
-    // tl.current.to(
-    //   ref.current.rotation,
-    //   { duration: 1, x: 0, y: -Math.PI / 6, z: 0 },
-    //   1
-    // );
-
-    // // Office movement
-    // tl.current.to(
-    //   ref.current.position,
-    //   {
-    //     duration: 1,
-    //     x: 7,
-    //     z: 7,
-    //   },
-    //   0
-    // );
-    // tl.current.to(
-    //   ref.current.position,
-    //   {
-    //     duration: 1,
-    //     x: 7,
-    //     z: 7,
-    //   },
-    //   1
-    // );
-
-    // // LIBRARY FLOOR
-    // tl.current.from(
-    //   PictureRef.current.position,
-    //   {
-    //     duration: 0.5,
-    //     x: -2,
-    //   },
-    //   0.5
-    // );
-    // tl.current.from(
-    //   PictureRef.current.rotation,
-    //   {
-    //     duration: 0.5,
-    //     y: -Math.PI / 2,
-    //   },
-    //   0
-    // );
-
-    // // ATTIC
-    // tl.current.from(
-    //   groupRef.current.position,
-    //   {
-    //     duration: 1.5,
-    //     y: 2,
-    //   },
-    //   0
-    // );
-
-    // tl.current.from(
-    //   groupRef.current.rotation,
-    //   {
-    //     duration: 0.5,
-    //     y: Math.PI / 2,
-    //   },
-    //   1
-    // );
 
     tl.current.from(
-      groupRef.current.position,
+      teslaRef.current.position,
       {
         duration: 0.5,
 
@@ -624,7 +556,7 @@ type GLTFResult = GLTF & {
        position={[-2.63, 2.96, 1.62]}
        rotation={[0.01, 1.42, -0.01]}
        scale={0.04}
-       ref={groupRef}
+       ref={teslaRef}
      >
        <mesh
          castShadow
@@ -703,6 +635,7 @@ type GLTFResult = GLTF & {
          receiveShadow
          geometry={nodes.Object_10.geometry}
          material={materials["Material.007"]}
+         
        />
        <mesh
          castShadow

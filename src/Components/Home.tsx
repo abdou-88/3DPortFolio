@@ -50,7 +50,7 @@ const Home: React.FC<Props> = () => {
       
 
     >
-      <Light brightness={5} color={"red"} />
+      <Light brightness={4} color={"black"} />
       <color attach="background" args={["black"]} />
      
       <OrbitControls enableZoom={false} />

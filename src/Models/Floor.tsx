@@ -94,6 +94,23 @@ const Floor: React.FC<Props> = () => {
                 <ringGeometry args={[0.9, 1, 4, 2]} />
                 <meshStandardMaterial color="white" roughness={0.75} />
             </mesh>
+            <mesh
+                scale={4}
+                position={[-12, 0.1, -5]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2.3]}
+            >
+                <ringGeometry args={[0.9, 1, 7, 2]} />
+                <meshStandardMaterial color="white" roughness={0.75} />
+            </mesh>
+
+            <mesh
+                scale={4}
+                position={[-6, 0.1, -12]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 1.6]}
+            >
+                <ringGeometry args={[0.9, 1, 3, 2]} />
+                <meshStandardMaterial color="white" roughness={0.75} />
+            </mesh>
 
             <mesh
                 scale={4}
@@ -108,6 +125,14 @@ const Floor: React.FC<Props> = () => {
                 scale={4}
                 position={[3, 0.1, 14]}
                 rotation={[-Math.PI / 2, 0, Math.PI / 5]}
+            >
+                <ringGeometry args={[0.9, 1, 4, 1]} />
+                <meshStandardMaterial color="white" roughness={0.75} />
+            </mesh>
+            <mesh
+                scale={4}
+                position={[2, 0.1, -10]}
+                rotation={[-Math.PI / 2, 0, Math.PI / 2]}
             >
                 <ringGeometry args={[0.9, 1, 4, 1]} />
                 <meshStandardMaterial color="white" roughness={0.75} />
