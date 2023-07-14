@@ -130,9 +130,9 @@ type GLTFResult = GLTF & {
       ref.current.position,
       {
         duration: 2,
-        y: 16,
-        x:15.5,
-        z:29.5
+        y: 15.2,
+        x:14.5,
+        z:28.7
       },
       0
     );
@@ -150,8 +150,8 @@ type GLTFResult = GLTF & {
       teslaRef.current.position,
       {
         duration: 0.5,
-
-        z: 7,
+        x: 1,
+        z: 1,
       },
       1.5
     );
