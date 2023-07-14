@@ -18,11 +18,11 @@ type Props = {};
 
 
 type LightProps = {
-  brightness:number, 
+  brightness: number,
   color: string
 }
 
-function Light({ brightness, color }:LightProps) {
+function Light({ brightness, color }: LightProps) {
   return (
     <rectAreaLight
       width={3}
@@ -30,34 +30,32 @@ function Light({ brightness, color }:LightProps) {
       color={color}
       intensity={brightness}
       position={[-2, 10, 0]}
-      
+
       castShadow
     />
   );
 }
 const Home: React.FC<Props> = () => {
 
-
-
   return (
     <Canvas
       dpr={[1, 2]}
       shadows
       camera={{
-        fov: 70, position:[3,3,5]
+        fov: 70, position: [3, 3, 5]
       }}
-      
-      
+
+
 
     >
       <Light brightness={4} color={"black"} />
       <color attach="background" args={["black"]} />
-     
+
       <OrbitControls enableZoom={false} />
       <Suspense fallback={<LoadSpinner />}>
 
-     
-        
+
+
 
         <Stage
           environment={"apartment"}
@@ -67,7 +65,7 @@ const Home: React.FC<Props> = () => {
         >
 
           <ScrollControls pages={1} damping={0.5}>
-          <ambientLight />
+            <ambientLight />
             <FullScene />
 
           </ScrollControls>
