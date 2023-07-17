@@ -30,7 +30,6 @@ function Light({ brightness, color }: LightProps) {
       color={color}
       intensity={brightness}
       position={[-2, 10, 0]}
-
       castShadow
     />
   );
