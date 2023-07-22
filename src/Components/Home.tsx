@@ -41,7 +41,7 @@ const Home: React.FC<Props> = () => {
       dpr={[1, 2]}
       shadows
       camera={{
-        fov: 70, position: [3, 3, 5]
+        fov: 75, position: [3, 3, 5]
       }}
 
 
