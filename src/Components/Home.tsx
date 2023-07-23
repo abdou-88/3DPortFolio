@@ -13,7 +13,6 @@ import FullScene from "../Models/FullScene";
 
 
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {};
 
 
